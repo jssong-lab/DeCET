@@ -1,5 +1,4 @@
 # DeCET
-Codes associated with the paper XXXX
 
 ### Repository Contents
 
