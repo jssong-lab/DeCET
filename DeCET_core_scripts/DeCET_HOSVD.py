@@ -67,7 +67,7 @@ def HOSVD(X):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--data_tensor", type=str, required=True,
-                        help=("Input data tensor. This is a pytorch tensor storing     \n"
+                        help=("Input data tensor. This is a PyTorch tensor storing     \n"
                               "the ChIP-seq data set. The only assumption made about   \n"
                               "the tensor is that the last index represents the genomic\n"
                               "location. This is used when projecting the data onto the\n"
@@ -91,18 +91,12 @@ if __name__ == '__main__':
                               "tensor and returns a scaled version of this tensor. \n"
                               "Default is to not scale the input tensor in any way"))
     parser.add_argument("--cpu", const=True, default=False, action='store_const',
-                        help=("Run the HOSVD on CPU. This will increase the run    \n"
-                              "time dramatically, and should only be used for small\n"
-                              "tensors when no GPU is available. Default is to run \n"
-                              "on GPU."))
-    parser.add_argument("--outdir", default="./", 
-                        help=("Directory to write output. Default is working directory."))
+                        help=("Run the HOSVD on CPU. Default is to run on GPU."))
     parser.add_argument("-o", "--output", type=str, required=True,
-                        help=("Name used at the start of all output files. Required."))
+                        help=("Prefix to use for writing the output files. Required."))
 
     args = parser.parse_args()
 
-    outdir = args.outdir
     output_name = args.output
     print("output_name: {}".format(output_name))
     print("input tensor: {}".format(args.data_tensor))
@@ -184,8 +178,11 @@ if __name__ == '__main__':
     sys.stdout.flush()
 
     # Write the projections onto the factor matrix for
-    # the last index 
-    output_project = open(outdir + '/' + output_name + '_projections.txt','w+') 
+    # the last index. Save as both a PyTorch tensor
+    # and a text file.
+    torch.save(B[Ellipsis,:loc_cut].to('cpu'), output_name + '_projections.pt')
+
+    output_project = open(output_name + '_projections.txt','w+') 
     for index in np.ndindex(dim[:-1]):
         for i in range(len(dim)-2):
             output_project.write("{},".format(index[i]))
@@ -196,9 +193,9 @@ if __name__ == '__main__':
     output_project.close()
 
     # Write all the factor matrices and the core tensor
-    torch.save(S.to('cpu'), outdir + '/' + output_name + '_core_tensor.pt')
+    torch.save(S[Ellipsis,:loc_cut].to('cpu'), output_name + '_core_tensor.pt')
     for i in range(len(dim)-1):
-        torch.save(U[i].to('cpu'), outdir + '/' + output_name + '_factor_matrix_' + str(i) + '.pt')
-    torch.save(U[-1][:,:loc_cut].to('cpu'), outdir + '/' + output_name + '_factor_matrix_' + str(len(dim)-1) + '.pt')
+        torch.save(U[i].to('cpu'), output_name + '_factor_matrix_' + str(i) + '.pt')
+    torch.save(U[-1][:,:loc_cut].to('cpu'), output_name + '_factor_matrix_' + str(len(dim)-1) + '.pt')
 
     print( time.asctime( time.localtime(time.time()) ))
