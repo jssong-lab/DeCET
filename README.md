@@ -17,7 +17,6 @@
     * [epigenetically_regulated_genes.ipynb](./DeCET_downstream_analysis/epigenetically_regulated_genes.ipynb) a Jupyter notebook used to identify genes near epigenetic alterations and filter for genes that are also differentially expressed in leiomyoma.
     * [ATACseq_merged_summit_pileup.ipynb](./DeCET_downstream_analysis/ATACseq_merged_summit_pileup.ipynb) a Jupyter notebook for analyzing ATAC-seq pileup in peak regions overlapping regions with altered histone modifications in leiomyoma. Includes code for generating Figures S7A and S7B.
     * [motif_calling_analysis.ipynb](./DeCET_downstream_analysis/motif_calling_analysis.ipynb) a Jupyter notebook for analyzing the results of motif calling in leiomyoma.
-    * [Myo_HOXA13_ChIPseq.ipynb](./DeCET_downstream_analysis/Myo_HOXA13_ChIPseq.ipynb) a Jupyter notebook for analyzing HOXA13 ChIP-seq data from primary myometrium cells. Includes code for generating Figures 5E and 5F.
     * [super_enhancer_overlap.ipynb](./DeCET_downstream_analysis/super_enhancer_overlap.ipynb) a Jupyter notebook comparing the overlap of DeCET altered regions and called super and normal enhancers in leiomyoma.
     * [DeCET_REMC_adult_tissues_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_adult_tissues_final.ipynb) application of DeCET to REMC adult tissue dataset. Includes code for generating Figures 6A and 8A.
     * [DeCET_REMC_muscle_types_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_muscle_types_final.ipynb) application of DeCET to REMC adult muscle tissues. Includes code for generating Figures 6B and 8B.
