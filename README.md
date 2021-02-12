@@ -1,4 +1,4 @@
-# DeCET
+# DeCET (Decomposition and Classification of Epigenomic Tensors)
 
 ## Repository Contents
 
@@ -9,7 +9,7 @@
     * [MOR_order3_scaling_ChIPseq.py](./DeCET_core_scripts/MOR_order3_scaling_ChIPseq.py) scaling function implementing the median of ratios (MOR) scaling of an order 3 ChIP-seq data tensor. The MOR scaling is performed over the first index separately for each value of the second index. This scaling function was used for the REMC and prostate cancer datasets.
 
 * [DeCET_downstream_analysis](./DeCET_downstream_analysis) Python scripts and Jupyter notebooks used for analyzing the results from the [DeCET_core_scripts](./DeCET_core_scripts).
-    * [analysis_of_HOSVD_projections.ipynb](./DeCET_downstream_analysis/analysis_of_HOSVD_projections.ipynb) a Jupyter notebook used for analyzing the HOSVD projections for the leiomyoma and myometrium dataset. This notebook contains the code used for identifying regions with epigenetic alterations and for generating Figures 1B, 1C, 2B, 2C, 4A, 8E, S3A-F, S4A-F, S5B, S6D.
+    * [analysis_of_HOSVD_projections.ipynb](./DeCET_downstream_analysis/analysis_of_HOSVD_projections.ipynb) a Jupyter notebook used for analyzing the HOSVD projections for the leiomyoma and myometrium dataset. This notebook contains the code used for identifying regions with epigenetic alterations and for generating Figures 1B, 1C, 2B, 2C, 4A, S3A-F, S4A-F, S5B, S6D, S8E.
     * [classification_cross_validation.py](./DeCET_downstream_analysis/classification_cross_validation.py) a Python script for running the disease and subtype classification cross-validation described in the study.
     * [region_functional_characterization.ipynb](./DeCET_downstream_analysis/region_functional_characterization.ipynb) a Jupyter notebook containing code for determining the regulatory function of regions with altered histone modifications in leiomyoma. Includes code for generating Figures 3A-D, S6A-C.
     * [contact_domain_alterations.ipynb](./DeCET_downstream_analysis/contact_domain_alterations.ipynb) a Jupyter notebook containing code for studying the confinement of epigenetic alterations to chromatin contact domains in leiomyoma. Includes code for generating Figures 4C-F, S6E-G.
@@ -18,10 +18,10 @@
     * [ATACseq_merged_summit_pileup.ipynb](./DeCET_downstream_analysis/ATACseq_merged_summit_pileup.ipynb) a Jupyter notebook for analyzing ATAC-seq pileup in peak regions overlapping regions with altered histone modifications in leiomyoma. Includes code for generating Figures S7A and S7B.
     * [motif_calling_analysis.ipynb](./DeCET_downstream_analysis/motif_calling_analysis.ipynb) a Jupyter notebook for analyzing the results of motif calling in leiomyoma.
     * [super_enhancer_overlap.ipynb](./DeCET_downstream_analysis/super_enhancer_overlap.ipynb) a Jupyter notebook comparing the overlap of DeCET altered regions and called super and normal enhancers in leiomyoma.
-    * [DeCET_REMC_adult_tissues_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_adult_tissues_final.ipynb) application of DeCET to REMC adult tissue dataset. Includes code for generating Figures 6A and 8A.
-    * [DeCET_REMC_muscle_types_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_muscle_types_final.ipynb) application of DeCET to REMC adult muscle tissues. Includes code for generating Figures 6B and 8B.
-    * [DeCET_REMC_Tcell_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_Tcell_final.ipynb) application of DeCET to REMC T cell samples. Includes code for generating Figures 6C and 8C.
-    * [DeCET_BCCL_final.ipynb](./DeCET_downstream_analysis/DeCET_BCCL_final.ipynb) application of DeCET to breast cancer. Includes code for generating Figures 7A, 7B and 8D.
+    * [DeCET_REMC_adult_tissues_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_adult_tissues_final.ipynb) application of DeCET to REMC adult tissue dataset. Includes code for generating Figures 6A and S8A.
+    * [DeCET_REMC_muscle_types_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_muscle_types_final.ipynb) application of DeCET to REMC adult muscle tissues. Includes code for generating Figures 6B and S8B.
+    * [DeCET_REMC_Tcell_final.ipynb](./DeCET_downstream_analysis/DeCET_REMC_Tcell_final.ipynb) application of DeCET to REMC T cell samples. Includes code for generating Figures 6C and S8C.
+    * [DeCET_BCCL_final.ipynb](./DeCET_downstream_analysis/DeCET_BCCL_final.ipynb) application of DeCET to breast cancer. Includes code for generating Figures 7A, 7B and S8D.
     * [DeCET_PCa_final.ipynb](./DeCET_downstream_analysis/DeCET_PCa_final.ipynb) application of DeCET to prostate cancer. Includes code for generating Figure 7C.
     * [auxiliary_bed_functions.py](./DeCET_downstream_analysis/auxiliary_bed_functions.py) some useful functions for working with bed formatted (or bed like) files. These are used in the Jupyter notebooks in this study.
 
