@@ -72,9 +72,9 @@ Three additional arguments can be specified:
   * `-p/--processors`: The number of processors to use for parallelization. If a value greater than 1 is specified, then the corresponding number of input files will be binned and scaled in parallel. Default is 1.
   
 Four output files are returned:
-  * `.pt`: A Pytorch double tensor storing the ChIP-seq dataset with the scaled controls subtracted. The last index corresponds to the genomic location. The tensor is filled according to the indices specified in the input.
-  * `_net_control_tenosr.pt`: A Pytorch tensor specifying the total number of binned reads in the corresponding control file for each of the input samples (using the same indices). This can be useful for scaling visualizations of the input bed files, but is not needed for the remaining DeCET analysis.
-  * `_scale_tensor.pt`: A Pytorch tensor specifying the scaling factor used to scale the corresponding control to each of the signal datasets. This file is not needed for the remaining DeCET analysis.
+  * `.pt`: A PyTorch double tensor storing the ChIP-seq dataset with the scaled controls subtracted. The last index corresponds to the genomic location. The tensor is filled according to the indices specified in the input.
+  * `_net_control_tenosr.pt`: A PyTorch tensor specifying the total number of binned reads in the corresponding control file for each of the input samples (using the same indices). This can be useful for scaling visualizations of the input bed files, but is not needed for the remaining DeCET analysis.
+  * `_scale_tensor.pt`: A PyTorch tensor specifying the scaling factor used to scale the corresponding control to each of the signal datasets. This file is not needed for the remaining DeCET analysis.
   * `_index_to_genomic.pkl`: A pickled Python list. This list contains the genomic coordinates (in 0-start, half-open format) corresponding to the genomic location index used in the tensor. For each index, the corresponding chromosome, start coordinate, and end coordinate of the bin is stored as a list (_e.g._,  `['chr1', 0, 2000]`).
   
 ### Decomposing the data tensor
